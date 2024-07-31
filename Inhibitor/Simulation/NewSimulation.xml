@@ -1,0 +1,61 @@
+<CompuCell3D Revision="2" Version="4.6.0">
+   
+   <Metadata>
+      <NumberOfProcessors>4</NumberOfProcessors>
+   </Metadata>
+   <Potts>
+      <Dimensions x="100" y="100" z="100"/>
+      <Steps>50001</Steps>
+      <Flip2DimRatio>1</Flip2DimRatio>
+      <RandomSeed>44691</RandomSeed>
+      <NeighborOrder>3</NeighborOrder>
+   </Potts>
+   <Plugin Name="CellType">    
+      <CellType TypeId="0" TypeName="Medium"/>
+      <CellType TypeId="1" TypeName="Y"/>
+      <CellType TypeId="2" TypeName="G"/>
+      <CellType TypeId="3" TypeName="B"/>
+      <CellType TypeId="4" TypeName="R"/>
+   </Plugin>
+   <Plugin Name="Volume"/>
+   <Plugin Name="Surface"/>
+   <Plugin Name="CenterOfMass"/>
+   <Plugin Name="NeighborTracker"/>
+   <Plugin Name="PixelTracker"/>
+   <Plugin Name="ConnectivityGlobal">
+       <FastAlgorithm/>
+       <ConnectivityOn Type="Y"/>
+       <ConnectivityOn Type="G"/>
+       <ConnectivityOn Type="B"/>
+       <ConnectivityOn Type="R"/>        
+   </Plugin>
+   <Plugin Name="Contact">
+      <Energy id="MtoM" Type1="Medium" Type2="Medium">0</Energy>
+      <Energy id="MtoY" Type1="Medium" Type2="Y">26.0</Energy>
+      <Energy id="MtoG" Type1="Medium" Type2="G">26.0</Energy>
+      <Energy id="MtoB" Type1="Medium" Type2="B">26.0</Energy>
+      <Energy id="MtoR" Type1="Medium" Type2="R">26.0</Energy>      
+      <Energy id="YtoY" Type1="Y" Type2="Y">47.0</Energy>    
+      <Energy id="YtoG" Type1="Y" Type2="G">42.0</Energy>    
+      <Energy id="YtoB" Type1="Y" Type2="B">47.0</Energy>
+      <Energy id="YtoR" Type1="Y" Type2="R">42.0</Energy>      
+      <Energy id="GtoG" Type1="G" Type2="G">25.0</Energy>
+      <Energy id="GtoB" Type1="G" Type2="B">42.0</Energy>     
+      <Energy id="GtoR" Type1="G" Type2="R">25.0</Energy>
+      <Energy id="BtoB" Type1="B" Type2="B">47.0</Energy>      
+      <Energy id="BtoR" Type1="B" Type2="R">42.0</Energy>
+      <Energy id="RtoR" Type1="R" Type2="R">25.0</Energy>
+      <NeighborOrder>4</NeighborOrder>
+   </Plugin>
+   
+   
+   <Steppable Type="BlobInitializer">
+      <Region>
+         <Center x="50" y="50" z="50"/>
+         <Radius>15</Radius>
+         <Gap>0</Gap>
+         <Width>5</Width>
+         <Types>B</Types>
+      </Region>
+   </Steppable>   
+</CompuCell3D>
