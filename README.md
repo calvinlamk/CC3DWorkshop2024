@@ -5,7 +5,6 @@ Modified and ported from code in https://github.com/lmorsut/Lam_Morsut_GJSM to C
 
 End results of the demos available at: https://www.dropbox.com/scl/fo/f7xezlmc9hy7sipw2zlxp/APU8Qlm_CeNGtJfvN3YtKDc?rlkey=fsvk18wg0mqbaut63l4uf4x61&dl=0 for workshop convenience
 
-Link will be removed after workshop
 
 Related works:
 
